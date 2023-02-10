@@ -1,0 +1,106 @@
+.container {
+  position: absolute;
+  width: 381px;
+  height: 352px;
+  left: 832px;
+  top: 275px;
+
+  input {
+    border: 1px solid #dfdee0;
+    border-radius: 8px;
+    height: 45px;
+    line-height: 23px;
+    padding-left: 16px;
+    color: #21092f;
+  }
+
+  label {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    color: #21092f;
+    margin-bottom: 9px;
+  }
+
+  .form-group {
+    width: 381px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+
+  .form-group-small {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 26px;
+    flex-wrap: nowrap;
+    font-size: 0;
+
+    .s-box {
+      width: 170px;
+
+      input {
+        width: 75px;
+        font-size: 18px;
+        margin-top: 9px;
+      }
+
+      input:nth-child(3) {
+        margin-left: 10px;
+      }
+    }
+
+    .b-box {
+      width: 191px;
+      margin-left: 20px;
+
+      input {
+        width: 191px;
+        font-size: 18px;
+        margin-top: 9px;
+      }
+    }
+  }
+
+  button {
+    width: 381px;
+    height: 53px;
+    background-color: hsl(278, 68%, 11%);
+    color: rgb(255, 255, 255);
+    border: 1px solid hsl(278, 68%, 11%);
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 23px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #21092f;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #21092f;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #21092f;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #21092f;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #21092f;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: #21092f;
+  opacity: 0.25;
+}

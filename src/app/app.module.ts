@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CardFormComponent } from './card-form/card-form.component';
+import { CardFormComponent } from './card/card-form/card-form.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { CardFormComponent } from './card-form/card-form.component';
     CardFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
