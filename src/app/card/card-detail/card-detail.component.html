@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card-container">
+    <img class="card-front" src="../../assets/images/bg-card-front.png" alt="Credit card front">
+    <img class="card-logo" src="../../../assets/images/card-logo.svg" alt="Card logo">
+    <span class="card-nr" *ngIf="!formData.cardNumber">0000 0000 0000 0000</span>
+    <span class="card-nr">{{formData.cardNumber}}</span>
+    <div class="card-name">
+      <span class="card-name-input" *ngIf="!formData.fullName">Jane Appleseed</span>
+      <span class="card-name-input">{{formData.fullName}}</span>
+    </div>
+    <div class="card-date">
+      <span class="card-month" *ngIf="!formData.cardMonth">00</span>
+      <span class="card-month" [class.card-month2]="formData.cardMonth">{{formData.cardMonth}}</span>
+      <span class="card-date-divider">/</span>
+      <span class="card-year" *ngIf="!formData.cardYear">00</span>
+      <span class="card-year">{{formData.cardYear}}</span>
+    </div>
+
+  </div>
+
+  <img class="card-back" src="../../assets/images/bg-card-back.png" alt="Credit card back">
+  <div class="card-container">
+    <span class="card-cvc" *ngIf="!formData.cvc">000</span>
+    <span class="card-cvc">{{formData.cvc}}</span>
+  </div>
+
+</div>

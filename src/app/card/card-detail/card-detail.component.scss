@@ -1,0 +1,110 @@
+.container {
+  position: absolute;
+  width: 541px;
+  height: 527px;
+  left: 164px;
+  top: 187px;
+  filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+
+  .card-container {
+    position: relative;
+    height: 245px;
+  }
+  .card-logo {
+    position: absolute;
+    width: 84px;
+    height: 47px;
+    left: 32px;
+    top: 28px;
+  }
+
+  .card-nr {
+    position: absolute;
+    height: 36px;
+    left: 7.16%;
+    right: 9.62%;
+    top: calc(50% - 36px / 2 + 34.5px);
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 3.42222px;
+    color: #ffffff;
+  }
+
+  .card-name {
+    position: absolute;
+    left: 7.16%;
+    right: 7.13%;
+    top: 81.84%;
+    bottom: 10.82%;
+
+    .card-name-input {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+
+  .card-date {
+    position: absolute;
+    height: 18px;
+    left: 68.85%;
+    top: 81.84%;
+
+    .card-month {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .card-date-divider {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .card-year {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+
+  .card-front {
+    position: absolute;
+    width: 447px;
+    height: 245px;
+  }
+
+  .card-back {
+    position: absolute;
+    width: 447px;
+    height: 245px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .card-cvc {
+    position: absolute;
+    height: 18px;
+    left: 83.7%;
+    top: calc(64% - 9px);
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    left: 370px;
+  }
+}

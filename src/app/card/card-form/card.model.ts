@@ -1,7 +1,7 @@
 export interface ICardModel {
-  fullName: string;
-  cardNumber: number;
-  cardMonth: number;
-  cardYear: number;
-  cvc: number;
+  fullName: string
+  cardNumber: string
+  cardMonth: string
+  cardYear: string
+  cvc: string
 }

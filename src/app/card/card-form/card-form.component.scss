@@ -77,6 +77,11 @@
   }
 }
 
+/**.ng-invalid {
+  border: 1px solid #FF5050;;
+    border-radius: 8px;
+} **/
+
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #21092f;
@@ -103,4 +108,10 @@
   /* Most modern browsers support this now. */
   color: #21092f;
   opacity: 0.25;
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    left: 1060px;
+  }
 }
