@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-./src/assets/images/Screenshot%201.png
+[./src/assets/images/Screenshot%201.png]
 ### Links
 
 - Solution URL: [https://github.com/Kesja/Interactive-card-details-form]
