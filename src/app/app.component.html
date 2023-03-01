@@ -1,4 +1,8 @@
-<img class="bg-img" src="../../assets/images/bg-main-mobile.png" alt="">
-
-<app-card-detail></app-card-detail>
-<app-card-form></app-card-form>
+<div class="body-container">
+<img *ngIf="!mobile" class="bg-img" src="../assets/images/bg-main-desktop.png" alt="">
+<img *ngIf="mobile" class="bg-mobile-img" src="../assets/images/bg-main-mobile.png" alt="">
+  <div class="body-small">
+  <app-card-detail></app-card-detail>
+  <app-card-form></app-card-form>
+  </div>
+</div>

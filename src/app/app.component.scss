@@ -1,10 +1,34 @@
+.body-container {
+  display: flex;
+
+  //max-width: 1440px;
+  //max-height: 900px;
+  margin: 0 auto;
+}
+
+.body-small {
+  display: flex;
+  position: absolute;
+}
+
 .bg-img {
   height: 100vh;
   width: 483px;
 }
 
+.bg-mobile-img {
+  width: 100vw;
+  height: 230px;
+}
+
 @media screen and (min-width: 1600px) {
   .bg-img {
     width: 650px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .body-container {
+    max-width: 1920px;
   }
 }

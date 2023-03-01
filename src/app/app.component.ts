@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'interactive-card-details-form';
+  mobile: boolean = false;
+
+  ngOnInit() {
+    if (window.screen.width < 1000) {
+      this.mobile = true;
+    } else if (window.screen.height < 900) {
+      this.mobile = true;
+    }
+  }
 }

@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -6,11 +8,10 @@
   margin: 0;
 }
 
-html, body {
-  //height: 100%;
-  //width: 100%;
+html,
+body {
   font-size: 18px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 img {
@@ -18,6 +19,9 @@ img {
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }

@@ -15,11 +15,9 @@
       <span class="card-year" *ngIf="!formData.cardYear">00</span>
       <span class="card-year">{{formData.cardYear}}</span>
     </div>
-
   </div>
-
-  <img class="card-back" src="../../assets/images/bg-card-back.png" alt="Credit card back">
   <div class="card-container">
+    <img class="card-back" src="../../assets/images/bg-card-back.png" alt="Credit card back">
     <span class="card-cvc" *ngIf="!formData.cvc">000</span>
     <span class="card-cvc">{{formData.cvc}}</span>
   </div>

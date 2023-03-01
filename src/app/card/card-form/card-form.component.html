@@ -1,25 +1,69 @@
 <div class="container">
-  <form #cardForm="ngForm" [formGroup]="cardForm" novalidate autocomplete="off" (ngSubmit)="onSubmit(cardForm.value)" >
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off" *ngIf="!submit">
+
     <div class="form-group">
       <label for="fullName">Cardholder name</label>
-      <input [(ngModel)]="newCard.fullName" (ngModelChange)="onChange(newCard.fullName)" name="fullName" id="fullName" formControlName="fullName" type="text" placeholder="e.g. Jane Appleseed" required/>
+      <input name="fullName" id="fullName" formControlName="fullName" type="text" placeholder="e.g. Jane Appleseed"
+        required />
+      <em *ngIf="cardForm.get('fullName')?.invalid && cardForm.get('fullName')?.touched">Can't be blank</em>
     </div>
+
     <div class="form-group">
       <label for="cardNumber" class="lbl">Card number</label>
-      <input [(ngModel)]="newCard.cardNumber" (ngModelChange)="onChange(newCard.cardNumber)" name="cardNumber" #ccNumber id="cardNumber" formControlName="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000" required/>
+      <input name="cardNumber" id="cardNumber" formControlName="cardNumber" type="text"
+        placeholder="e.g. 1234 5678 9123 0000" required #ccNumber
+        (keyup)="creditCardNumberSpacing()" />
+      <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
+        <em class="card-nr"
+          *ngIf="cardForm.get('cardNumber')?.dirty && cardForm.get('cardNumber')?.hasError('onlyNumbers')">Wrong format,
+          numbers only</em>
+        <em class="card-nr" *ngIf="cardForm.get('cardNumber')?.hasError('isBlank')">Can't be blank</em>
+        <em class="card-nr"
+          *ngIf="cardForm.get('cardNumber')?.hasError('invalidNumber') && !cardForm.get('cardNumber')?.hasError('onlyNumbers') && !cardForm.get('cardNumber')?.hasError('isBlank')">Inserd
+          valid card number</em>
+      </div>
     </div>
+
     <div class="form-group-small">
       <div class="s-box">
         <label>Exp. Date (mm/yy)</label>
-        <input for="cardMonth" [(ngModel)]="newCard.cardMonth" (ngModelChange)="onChange($event)" name="cardMonth" id="cardMonth" formControlName="cardMonth" type="text" placeholder="MM" ngControl="cardMonth" required/>
-        <input for="cardYear" [(ngModel)]="newCard.cardYear" (ngModelChange)="onChange($event)" name="cardYear" id="cardYear" formControlName="cardYear" type="text" placeholder="YY" required/>
+        <input pattern="^[0-9]{2}$" [maxLength]="2" for="cardMonth" name="cardMonth" id="cardMonth"
+          formControlName="cardMonth" type="text" placeholder="MM" ngControl="cardMonth" required />
+        <input pattern="^[0-9]{2}$" [maxLength]="2" for="cardYear" name="cardYear" id="cardYear"
+          formControlName="cardYear" type="text" placeholder="YY" required />
+        <div
+          *ngIf="cardForm.get('cardMonth')?.invalid && cardForm.get('cardMonth')?.touched || cardForm.get('cardYear')?.invalid && cardForm.get('cardYear')?.touched ">
+          <em
+            *ngIf="cardForm.get('cardMonth')?.invalid && cardForm.get('cardMonth')?.touched && !cardForm.get('cardMonth')?.errors?.['pattern'] && cardForm.get('cardYear')?.invalid && cardForm.get('cardYear')?.touched && !cardForm.get('cardYear')?.errors?.['pattern']">
+            Can't be blank
+          </em>
+        </div>
+        <div *ngIf="cardForm.get('cardMonth')?.invalid || cardForm.get('cardYear')?.invalid">
+          <em *ngIf="cardForm.get('cardMonth')?.errors?.['pattern'] || cardForm.get('cardYear')?.errors?.['pattern']">
+            Insert valid date
+          </em>
+        </div>
       </div>
+
       <div class="b-box">
         <label for="cvc">Cvc</label>
-        <input [(ngModel)]="newCard.cvc" (ngModelChange)="onChange($event)" name="cvc" id="cvc" type="text" formControlName="cvc" placeholder="e.g. 123" required/>
+        <input pattern="^[0-9]{3}$" [maxLength]="3" name="cvc" id="cvc" type="text" formControlName="cvc"
+          placeholder="e.g. 123" required />
+        <em
+          *ngIf="cardForm.get('cvc')?.invalid && cardForm.get('cvc')?.touched && !cardForm.get('cvc')?.errors?.['pattern']">
+          Can't be blank</em>
+        <em *ngIf="cardForm.get('cvc')?.errors?.['pattern']">
+          Insert valid CVC number</em>
       </div>
+
     </div>
     <button type="submit">Confirm</button>
-  </form>
-</div>
 
+  </form>
+  <div *ngIf="submit" class="sub-container">
+    <img class="complete-ico" src="../../../assets/images/icon-complete.svg" alt="complete icon">
+    <h2>Thank you!</h2>
+    <p>We've added your card details</p>
+    <button *ngIf="submit" (click)="continueButton()" type="submit">Continue</button>
+  </div>
+</div>
