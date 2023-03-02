@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Kesja/Interactive-card-details-form]
-- Live Site URL: [https://dreamy-treacle-6af6c5.netlify.app/]
+- Live Site URL: [https://beamish-pika-5f889a.netlify.app/]
 
 ### Built with
 
