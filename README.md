@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Kesja/Interactive-card-details-form]
-- Live Site URL: [https://beamish-pika-5f889a.netlify.app/]
+- Live Site URL: [https://effulgent-cheesecake-1921a6.netlify.app/]
 
 ### Built with
 
